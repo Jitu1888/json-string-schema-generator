@@ -96,8 +96,7 @@ public final class JsonSchemaGenerator {
                 result.append(outputAsString(null, null, node.toString(), JsonNodeType.ARRAY));
                 result.append("}},");
                }else{
-                   result.append("array\");
-                   result.append("},");
+                   result.append("array\" },");
                }
                 break;
             case BOOLEAN:
