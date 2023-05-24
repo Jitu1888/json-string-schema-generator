@@ -89,11 +89,13 @@ public final class JsonSchemaGenerator {
         JsonNode node = null;
         switch (nodeType) {
             case ARRAY :
+               if(!(jsonNode.get(key).size() == 0)){
                 node = jsonNode.get(key).get(0);
                 LOGGER.info(key + " is an array with value of " + node.toString());
                 result.append("array\", \"items\": { \"properties\":");
                 result.append(outputAsString(null, null, node.toString(), JsonNodeType.ARRAY));
                 result.append("}},");
+               }
                 break;
             case BOOLEAN:
                 result.append("boolean\" },");
